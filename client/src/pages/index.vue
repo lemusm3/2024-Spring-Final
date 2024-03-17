@@ -47,7 +47,7 @@
           <div class="card-content">
             <h1 class="title">Today</h1>
             <h1 class="subtitle value"> Distance: {{ getCurrentUser() ? totalDistanceToday.toFixed(2) : '0.00' }} mi </h1>
-            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationToday.toFixed(2) : '0.00' }}</h1>
+            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationToday.toFixed(2) : '0.00' }} mins</h1>
             <h1 class="subtitle value">Avg Pace: {{ getCurrentUser() ? averageTimeCalc(totalDistanceToday, totalDurationToday).toFixed(2) : '0.00' }} mph</h1>
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div class="card-content">
             <h1 class="title">This Week</h1>
             <h1 class="subtitle value"> Distance: {{ getCurrentUser() ? totalDistanceThisWeek.toFixed(2) : '0.00' }} mi </h1>
-            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationThisWeek.toFixed(2) : '0.00' }}</h1>
+            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationThisWeek.toFixed(2) : '0.00' }} mins</h1>
             <h1 class="subtitle value">Avg Pace: {{ getCurrentUser() ? averageTimeCalc(totalDistanceThisWeek, totalDurationThisWeek).toFixed(2) : '0.00' }} mph</h1>
           </div>
         </div>
@@ -67,7 +67,7 @@
           <div class="card-content">
             <h1 class="title">All Time</h1>
             <h1 class="subtitle value"> Distance: {{ getCurrentUser() ? totalDistanceAllTime.toFixed(2) : '0.00' }} mi </h1>
-            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationAllTime.toFixed(2) : '0.00' }}</h1>
+            <h1 class="subtitle value">Duration: {{ getCurrentUser() ? totalDurationAllTime.toFixed(2) : '0.00' }} mins</h1>
             <h1 class="subtitle value">Avg Pace: {{ getCurrentUser() ? averageTimeCalc(totalDistanceAllTime, totalDurationAllTime).toFixed(2) : '0.00' }} mph</h1>
           </div>
         </div>
