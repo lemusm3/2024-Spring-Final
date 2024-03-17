@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { setCurrentUser, getCurrentUser } from '@/model/currentUser';
 import { type UserRoot, getUsers } from '@/model/users';
 import UserPic from './UserPic.vue';
@@ -8,6 +8,11 @@ import UserPic from './UserPic.vue';
 const products = ref([] as UserRoot[]);
 const isActive = ref(false);
 const isAdmin = ref(false);
+const showLoginDropdown = ref(false);
+
+function toggleLoginDropdown() {
+  showLoginDropdown.value = !showLoginDropdown.value;
+}
 
 // Fetch data on component mount
 onMounted(async () => {
@@ -16,6 +21,10 @@ onMounted(async () => {
 
 function toggleMenu() {
     isActive.value = !isActive.value;
+}
+
+function closeMenu() {
+  isActive.value = false;
 }
 
 </script>
@@ -27,16 +36,17 @@ function toggleMenu() {
                 <img src="../assets/vite.svg" width="28" height="28">
             </RouterLink>
         </a>
-        <a role="button" @click="toggleMenu" :class="{ 'is-active': isActive }" class="navbar-burger m-auto" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
+        <!-- Navbar toggle icon -->
+<a role="button" @click="toggleMenu" :class="{ 'is-active': isActive }" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
     <div :class="{ 'is-active': isActive }" id="navbarBasicExample" class="navbar-menu m-auto">
         <div class="navbar-start">
             <!-- Navigation links -->
-            <RouterLink to="/MyActivity" class="navbar-item m-auto">
+            <RouterLink to="/MyActivity" class="navbar-item m-auto" @click.native="closeMenu">
                 <span class="icon-text">
                     <span class="icon">
                         <i class="fas fa-running"></i>
@@ -45,7 +55,7 @@ function toggleMenu() {
                 </span>
             </RouterLink>
 
-            <RouterLink to="/Statistics" class="navbar-item">
+            <RouterLink to="/Statistics" class="navbar-item" @click.native="closeMenu">
                 <span class="icon-text">
                     <span class="icon">
                         <i class="fas fa-chart-line"></i>
@@ -54,7 +64,7 @@ function toggleMenu() {
                 </span>
             </RouterLink>
 
-            <RouterLink to="/FriendsActivity" class="navbar-item">
+            <RouterLink to="/FriendsActivity" class="navbar-item" @click.native="closeMenu">
                 <span class="icon-text">
                     <span class="icon">
                         <i class="fas fa-users"></i>
@@ -63,48 +73,35 @@ function toggleMenu() {
                 </span>
             </RouterLink>
 
-            <RouterLink to="/Search" class="navbar-item">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <span class="icon-text">
+                <span class="icon">
+                <i class="fas fa-crown"></i>
+                    </span>
+                <span class="navbar-link">Admin</span>
+                </span>
+                <div class="navbar-dropdown" v-if="isAdmin">
+                    <RouterLink to="/products" class="navbar-item" @click.native="closeMenu">Users</RouterLink>
+                </div>
+            </div>
+        </div>
+        <!-- Sign Up Link -->
+        <RouterLink to="/SignUp" class="navbar-item" @click.native="closeMenu">
                 <span class="icon-text">
                     <span class="icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-user-plus"></i>
                     </span>
-                    <span>People Search</span>
+                    <span>Sign Up</span>
                 </span>
             </RouterLink>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">Admin</a>
-
-                <div class="navbar-dropdown" v-if="isAdmin">
-                    <RouterLink to="/products" class="navbar-item">Users</RouterLink>
-                </div>
-            </div>
-        </div>
-
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <UserPic></UserPic>
-                        <strong class="user-email">{{ getCurrentUser() }}</strong>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sign Up Link -->
-        <RouterLink to="/SignUp" class="navbar-item m-auto signup">
-            <span style="color: white">Sign Up</span>
-        </RouterLink>
-
         <!-- Logout/Login Dropdown -->
-        <div class="navbar-item has-dropdown is-hoverable button is-light margin arrow">
+        <div class="navbar-item has-dropdown is-hoverable button is-light margin">
             <a class v-if="getCurrentUser()">
-                <a class="navbar-link" @click="setCurrentUser(''); isAdmin=false;">Logout</a>
+                <a class="navbar-item" @click="setCurrentUser(''); isAdmin=false;">Logout</a>
             </a>
-            <a class="navbar-link" v-else>
+            <a class="navbar-link button is-light" v-else @click="toggleLoginDropdown">
                 Login
-                <div class="navbar-dropdown">
+                <div v-show="showLoginDropdown" class="navbar-dropdown">
                     <div class="navbar-item grey" v-for="user in products" :key="user.email" @click="setCurrentUser(user.email); isAdmin=user.admin">{{ user.firstName }} {{ user.lastName }}</div>
                 </div>
             </a>
@@ -121,6 +118,14 @@ function toggleMenu() {
         </h1>
     </div>
 </nav>
+<div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                        <UserPic></UserPic>
+                        <strong class="user-email">{{ getCurrentUser() }}</strong>
+                </div>
+            </div>
+        </div>
 </template>
 <style scoped>
 
@@ -132,12 +137,9 @@ function toggleMenu() {
     border-bottom: 2px solid #b900d1;
 }
 
-.arrow::after {
-    border-color: black; 
-}
-
 .signup:hover {
     background-color: rgb(42, 181, 160);
+
 }
 
 .grey:hover {
@@ -145,7 +147,7 @@ function toggleMenu() {
 }
 
 .margin {
-    margin: 7px;
+    margin: 25px;
 }
 
 .UserPic {
@@ -159,4 +161,5 @@ function toggleMenu() {
         text-overflow: ellipsis;
         white-space: nowrap;
 }
+
 </style>
