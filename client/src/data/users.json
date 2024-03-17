@@ -6,7 +6,7 @@
             "email": "lemusm3@newpaltz.edu",
             "handle": "lemusm3",
             "admin": true,
-            "image": "src/assets/marco.webp"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg"
         },
         {
             "firstName": "Jose",
@@ -14,7 +14,7 @@
             "email": "jose.ramos@yahoo.com",
             "handle": "jrdaprince",
             "admin": false,
-            "image": "src/assets/jose.jpg"
+            "image": "https://pbs.twimg.com/profile_images/1700362396529815552/gtnrYzTg_400x400.jpg"
         },
         {
             "firstName": "Kamala",
@@ -22,7 +22,7 @@
             "email": "kamala.harris@newpaltz.edu",
             "handle":"harrisk5",
             "admin": false,
-            "image": "src/assets/kamala.webp"
+            "image": "https://www.whitehouse.gov/wp-content/uploads/2021/04/V20210305LJ-0043.jpg"
         }
     ],
     "total": 100,

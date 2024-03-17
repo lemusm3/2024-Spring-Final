@@ -6,7 +6,7 @@
             "distance": 2.0,
             "duration": 15,
             "date": "2024-01-17",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYCEARCRjeW3htFIq8Wk-cA8k8UAKlIFXg6g&s",
+            "image": "https://hips.hearstapps.com/hmg-prod/images/rwd010122feachrissolomon-016-1639171216.jpg?crop=0.670xw:1.00xh;0.145xw,0&resize=1200:*",
             "comment": "Morning Run"
         },
         {
@@ -15,7 +15,7 @@
             "distance": 4.0,
             "duration": 50,
             "date": "2024-02-9",
-            "image": "src/assets/bike.jpg",
+            "image": "https://www.themanual.com/wp-content/uploads/sites/9/2021/02/how-much-weight-can-you-lose-riding-a-bike.jpg?fit=800%2C800&p=1",
             "comment": "Bike"
 
         },
@@ -25,7 +25,7 @@
             "distance": 2.5,
             "duration": 30,
             "date": "2024-05-23",
-            "image": "src/assets/treadmill.jpg",
+            "image": "https://www.verywellfit.com/thmb/ngfBxQt76KSk_RmMj7Zy6AdgU9E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-925832428-c5cef7ba4e774269b3ae305431c891cf.jpg",
             "comment": "Gym Treadmill"
         }
     ],
