@@ -1,0 +1,35 @@
+{
+    "items": [
+        {
+            "email": "lemusm3@newpaltz.edu",
+            "location": "Kinsgton, NY",
+            "distance": 2.0,
+            "duration": 15,
+            "date": "2024-01-17",
+            "image": "src/assets/run.jpg",
+            "comment": "Morning Run"
+        },
+        {
+            "email": "jose.ramos@yahoo.com",
+            "location": "Wallkill, NY",
+            "distance": 4.0,
+            "duration": 50,
+            "date": "2024-02-9",
+            "image": "src/assets/bike.jpg",
+            "comment": "Bike"
+
+        },
+        {
+            "email": "kamala.harris@newpaltz.edu",
+            "location": "Rhinebeck, NY",
+            "distance": 2.5,
+            "duration": 30,
+            "date": "2024-05-23",
+            "image": "src/assets/treadmill.jpg",
+            "comment": "Gym Treadmill"
+        }
+    ],
+    "total": 100,
+    "skip": 0,
+    "limit": 30
+}
