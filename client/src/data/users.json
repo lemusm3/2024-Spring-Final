@@ -1,0 +1,31 @@
+{
+    "items": [
+        {
+            "firstName": "Marco",
+            "lastName": "Lemus",
+            "email": "lemusm3@newpaltz.edu",
+            "handle": "lemusm3",
+            "admin": true,
+            "image": "src/assets/marco.webp"
+        },
+        {
+            "firstName": "Jose",
+            "lastName": "Ramos",
+            "email": "jose.ramos@yahoo.com",
+            "handle": "jrdaprince",
+            "admin": false,
+            "image": "src/assets/jose.jpg"
+        },
+        {
+            "firstName": "Kamala",
+            "lastName": "Harris",
+            "email": "kamala.harris@newpaltz.edu",
+            "handle":"harrisk5",
+            "admin": false,
+            "image": "src/assets/kamala.webp"
+        }
+    ],
+    "total": 100,
+    "skip": 0,
+    "limit": 30
+}
