@@ -73,7 +73,7 @@ function closeMenu() {
                 </span>
             </RouterLink>
 
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item m-auto has-dropdown is-hoverable">
                 <span class="icon-text">
                 <span class="icon">
                 <i class="fas fa-crown"></i>
