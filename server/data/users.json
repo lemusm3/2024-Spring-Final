@@ -1,0 +1,31 @@
+{
+    "items": [
+        {
+            "firstName": "Marco",
+            "lastName": "Lemus",
+            "email": "lemusm3@newpaltz.edu",
+            "handle": "lemusm3",
+            "admin": true,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg"
+        },
+        {
+            "firstName": "Jose",
+            "lastName": "Ramos",
+            "email": "jose.ramos@yahoo.com",
+            "handle": "jrdaprince",
+            "admin": false,
+            "image": "https://pbs.twimg.com/profile_images/1700362396529815552/gtnrYzTg_400x400.jpg"
+        },
+        {
+            "firstName": "Kamala",
+            "lastName": "Harris",
+            "email": "kamala.harris@newpaltz.edu",
+            "handle":"harrisk5",
+            "admin": false,
+            "image": "https://www.whitehouse.gov/wp-content/uploads/2021/04/V20210305LJ-0043.jpg"
+        }
+    ],
+    "total": 100,
+    "skip": 0,
+    "limit": 30
+}
