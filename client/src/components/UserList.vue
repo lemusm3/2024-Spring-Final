@@ -1,9 +1,9 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
-    import { type UserRoot, getUsers } from "@/model/users";
+    import { type User, getUsers } from "@/model/users";
 
-    const products = ref([] as UserRoot[]);
-    const selectedProduct = ref<UserRoot | null>(null);
+    const products = ref([] as User[]);
+    const selectedProduct = ref<User | null>(null);
 
     // Fetch data on component mount
     onMounted(async () => {
@@ -11,7 +11,7 @@
     });
 
     // Function to delete a product
-    const deleteProduct = (product: UserRoot) => {
+    const deleteProduct = (product: User) => {
         const index = products.value.findIndex(p => p.email === product.email);
         if (index !== -1) {
             products.value.splice(index, 1); // Remove the product from the products array
@@ -19,7 +19,7 @@
     };
 
     // Function to edit a product
-    const editProduct = (product: UserRoot) => {
+    const editProduct = (product: User) => {
         selectedProduct.value = product; // Assign the selected product to selectedProduct
         console.log('Editing product:', product);
     };

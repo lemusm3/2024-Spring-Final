@@ -2,10 +2,10 @@
 import { RouterLink } from 'vue-router';
 import { ref, computed, onMounted } from 'vue';
 import { setCurrentUser, getCurrentUser } from '@/model/currentUser';
-import { type UserRoot, getUsers } from '@/model/users';
+import { type User, getUsers } from '@/model/users';
 import UserPic from './UserPic.vue';
 
-const products = ref([] as UserRoot[]);
+const products = ref([] as User[]);
 const isActive = ref(false);
 const isAdmin = ref(false);
 const showLoginDropdown = ref(false);
@@ -72,6 +72,15 @@ function closeMenu() {
                     <span>Friends Activity</span>
                 </span>
             </RouterLink>
+
+            <RouterLink to="/search" class="navbar-item">
+        <span class="icon-text">
+        <span class="icon">
+          <i class="fas fa-search"></i>
+        </span>
+        <span>User Search</span>
+      </span>
+      </RouterLink>
 
             <div class="navbar-item m-auto has-dropdown is-hoverable">
                 <span class="icon-text">

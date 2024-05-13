@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { type ActivityData, getActivity } from "@/model/products";
-import { getUsers, type UserRoot } from '@/model/users';
+import { getUsers, type User} from '@/model/users';
 
 const newWorkout = ref<ActivityData | null>(null);
 const products = ref([] as ActivityData[]);
-const users = ref([] as UserRoot[]);
+const users = ref([] as User[]);
 
 // Fetch activity data and user data on component mount
 onMounted(async () => {

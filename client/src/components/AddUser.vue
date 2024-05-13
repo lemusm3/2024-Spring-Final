@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { getUsers, type UserRoot } from '@/model/users';
+import { getUsers, type User } from '@/model/users';
 
-const users = ref([] as UserRoot[]);
-const newUser = ref<UserRoot | null>(null);
+const users = ref([] as User[]);
+const newUser = ref<User | null>(null);
 
 // Fetch data on component mount
 onMounted(async () => {
@@ -13,6 +13,7 @@ onMounted(async () => {
 // Function to add a new user
 function addUser() {
     newUser.value = {
+        id: 0,
         firstName: '',
         lastName: '',
         email: '',

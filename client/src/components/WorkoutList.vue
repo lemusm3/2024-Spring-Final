@@ -1,10 +1,10 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue'; 
     import { type ActivityData, getActivity } from "@/model/products"; 
-    import { getUsers, type UserRoot } from '@/model/users';
+    import { getUsers, type User } from '@/model/users';
 
     const products = ref([] as ActivityData[]); 
-    const users = ref([] as UserRoot[]);
+    const users = ref([] as User[]);
 
     // Function to remove a card from the product list
     function removeCard(product: ActivityData) {

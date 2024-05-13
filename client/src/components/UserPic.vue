@@ -1,9 +1,9 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
-    import { type UserRoot, getUsers } from "@/model/users";
+    import { type User, getUsers } from "@/model/users";
     import { getCurrentUser } from '@/model/currentUser';
 
-    const products = ref([] as UserRoot[]);
+    const products = ref([] as User[]);
 
     // Fetch data on component mount
     onMounted(async () => {
