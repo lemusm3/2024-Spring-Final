@@ -3,7 +3,7 @@
 
 <template>
     <div class="SignUp">
-      <p>Sign Up.... coming soon</p>
+      <p>Please choose someone to log in as!</p>
     </div>
   </template>
   
