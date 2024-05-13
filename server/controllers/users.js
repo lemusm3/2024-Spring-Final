@@ -10,7 +10,6 @@ const app=express.Router();
 
 app
     .get('/', (req, res, next) => {
-        //console.log("User get all");
         users.getAll()
         .then(all => {
             /** @type { UserDataListEnvelope } */
