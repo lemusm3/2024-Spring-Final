@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { type UserRoot } from '@/model/users';
+import { type User } from '@/model/users';
 
 const currentUser = ref('');
 
@@ -17,7 +17,7 @@ export function getCurrentUser() {
 export function isAdmin() {
     const isAdmin = ref(false);
     const currentUser = ref(getCurrentUser());
-    const users: UserRoot[] = [];
+    const users: User[] = [];
 
     // Loop through each user in the users array
     for (const user of users) {
