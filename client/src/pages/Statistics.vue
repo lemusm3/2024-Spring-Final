@@ -1,5 +1,5 @@
 <template>
-    <p>Extra Credit</p>
+    <p></p>
   </template>
   
   <style>
