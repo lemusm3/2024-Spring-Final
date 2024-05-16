@@ -7,15 +7,15 @@ import { computed } from 'vue';
 const users = ref([] as User[]);
 const info = ref([] as User[]);
 
-//fetching the data from the model
 async function fetchData() {
   users.value = await getUsers();
+
+  return users;
 }
 
 fetchData().then(() => (users.value));
 searchUser("null").then((u)=>info.value=u);
 
-//----------------------------------------------
 
 const data=users;
 const name = ref("");
@@ -33,7 +33,7 @@ const filteredDataArray = computed(() =>
 
 <template>
   <section>
-    <o-field label="Find a User">
+    <o-field label="Searching for someone?">
         <o-autocomplete
             v-model="name"
             rounded
@@ -45,7 +45,7 @@ const filteredDataArray = computed(() =>
             :data="filteredDataArray"
             :field="'firstName'"  
             @select="(option: User) => (selected = option)">
-            <template #empty>Try another User!</template>
+            <template #empty>oops</template>
         </o-autocomplete>
     </o-field>
 
@@ -66,21 +66,22 @@ const filteredDataArray = computed(() =>
 
 
 .card-img-top{
-  width:50px;
+  width:100px;
 }
 
 .field{
-  margin: 10px;
+  margin: 50px;
 }
 .o-autocomplete {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
+  border: 10px solid #989898;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 30px;
 }
 
 .o-autocomplete .dropdown-item {
-  padding: 10px;
+  padding: 40px;
+
 }
 
   </style>
