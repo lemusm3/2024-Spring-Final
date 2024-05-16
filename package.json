@@ -11,6 +11,8 @@
     "dev": "nodemon server/index.js --watch server/"
   },
   "dependencies": {
+    "@oruga-ui/oruga-next": "^0.8.9",
+    "@oruga-ui/theme-bulma": "^0.3.0",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
